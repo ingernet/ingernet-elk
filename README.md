@@ -8,9 +8,6 @@ The README template below provides a starting point with details about what info
 
 
 
-
-
-
 #### Table of Contents
 
 1. [Description](#description)
