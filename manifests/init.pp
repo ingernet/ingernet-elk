@@ -5,4 +5,5 @@
 # @example
 #   include elk
 class elk {
+  bork
 }
