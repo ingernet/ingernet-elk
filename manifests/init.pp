@@ -5,7 +5,7 @@
 # @example
 #   include elk
 class elk {
-  class {'logstash':}
+  class { 'logstash': }
   logstash::plugin {'logstash-input-beats':}
   logstash::configfile{'beats':
     source => 'puppet:///modules/elk/beats.conf',
