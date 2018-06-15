@@ -16,23 +16,22 @@
 #   "json_keys_under_root" => true
 # } ] 
 
-# class elk::filebeat (
+class elk::filebeat (
   # $prospectors     = [],
-  # $logstash_server = '127.0.0.1',
-  # $logstash_port   = '5044',
-# ){
-class elk::filebeat {
+  $logstash_server = '127.0.0.1',
+  $logstash_port   = '5044',
+ ) {
   include elastic_stack::repo
 
-  package{'filebeat':
+  package { 'filebeat':
     ensure => present,
   }
-  service{'filebeat':
+  service { 'filebeat':
     ensure  => running,
     enable  => true,
     require => Package['filebeat'],
   }
-  file{'/etc/filebeat/filebeat.yml':
+  file { '/etc/filebeat/filebeat.yml':
     ensure  => file,
     content => epp('elk/filebeat.yml.epp',{
       prospectors     => $prospectors,
