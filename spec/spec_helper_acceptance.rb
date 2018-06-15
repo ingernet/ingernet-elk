@@ -15,7 +15,7 @@ RSpec.configure do |c|
     hosts.each do |host|
       install_dev_puppet_module_on(host, :source => module_root, {
         :module_name        => 'elk',
-        :target_module_path => '/etc/puppetlabs/code/modules',
+        :target_module_path => '/etc/puppetlabs/code/modules'
       })
     end
   end
